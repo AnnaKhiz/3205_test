@@ -1,15 +1,15 @@
 <template>
-  <form-component />
+  <user-search />
 </template>
 
 <script>
 
-import FormComponent from "@/components/FormComponent.vue"
+import UserSearch from "@/components/UserSearch.vue"
 
 export default {
   name: 'App',
   components: {
-    FormComponent
+    UserSearch
   }
 }
 </script>
