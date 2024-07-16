@@ -19,12 +19,45 @@ router.post('/', async (req, res, next) => {
   const data = readFile();
   const result = JSON.parse(data)
 
+  // let timeoutId = null;
+  let userSearch = []
+
   try {
-    const user = result.filter(el => el.email === email || el.number === number)
-    res.send( { "result" : user } )
+    const userByEmail = result.filter(el => el.email === email);
+
+    if (!userByEmail.length) {
+      userSearch = []
+    } else {
+      const user = userByEmail.filter(el => el.number === number);
+
+      if (!user.length) {
+        userSearch = userByEmail
+      } else {
+        userSearch = user
+      }
+
+
+    }
+
+    setTimeout(() => {
+      res.send( { "result" : userSearch } )
+    }, 5000)
+
   } catch (error) {
-    res.send({ "result" : "Users not found" })
+    res.send({ "result" : `Catch error: ${error}` })
   }
+
+
+  // try {
+  //   const user = result.filter(el => el.email === email && el.number === number)
+  //   setTimeout(() => {
+  //     res.send( { "result" : user } )
+  //   }, 5000)
+  // } catch (error) {
+  //   res.send({ "result" : `Catch error: ${error}` })
+  // }
+
+  // clearTimeout(timeoutId)
 
 })
 
