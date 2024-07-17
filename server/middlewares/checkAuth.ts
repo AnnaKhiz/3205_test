@@ -1,11 +1,13 @@
-function checkEmail(req, res, next) {
+import { Request, Response, NextFunction } from 'express';
+
+export const checkEmail = function (req: Request, res: Response, next: NextFunction):  void | Response<object> {
   const { email } = req.body;
 
   if (!email || email.trim().replace(' ', '') === '') {
     return res.status(400).send({ "result": "Empty email field" });
   }
 
-  const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const pattern: RegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (!pattern.test(email)) {
     return res.status(400).send({ "result": "Wrong email format" });
@@ -14,7 +16,7 @@ function checkEmail(req, res, next) {
   next();
 }
 
-function checkNumber(req, res, next) {
+export const checkNumber = function (req: Request, res: Response, next: NextFunction):  void | Response<object> {
   const { number } = req.body;
 
   if (!number || number.trim().replace(' ', '') === '') {
@@ -22,7 +24,7 @@ function checkNumber(req, res, next) {
     return next();
   }
 
-  const pattern = /^[0-9]*$/;
+  const pattern: RegExp = /^[0-9]*$/;
 
   if (!pattern.test(number)) {
     return res.status(400).send({ "result": "Wrong number format" });
@@ -30,5 +32,3 @@ function checkNumber(req, res, next) {
 
   next();
 }
-
-module.exports = { checkEmail, checkNumber }

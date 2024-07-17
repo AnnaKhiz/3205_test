@@ -100,9 +100,9 @@ export default {
 
       } catch(error) {
         if (error.name === 'AbortError') {
-          console.log('Fetch canceled')
+          console.error('Fetch canceled')
         } else {
-          console.log(`Error: ${error}`)
+          console.error(`Error: ${error}`)
         }
       }
     },
@@ -117,9 +117,3 @@ export default {
   }
 }
 </script>
-
-
-
-<style scoped>
-
-</style>

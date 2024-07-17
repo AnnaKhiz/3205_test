@@ -4,7 +4,7 @@
 
 <script>
 
-import UserSearch from "@/components/UserSearch.vue"
+import UserSearch from "@/components/UserSearch.vue";
 
 export default {
   name: 'App',
