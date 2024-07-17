@@ -1,21 +1,21 @@
-# 
+# How to run the project
 
-#1 Project setup
+<b>#1 Project setup</b>
 ```
 npm install
 ```
 
-#2 Vue project build
+<b>#2 Vue project build</b>
 ```
 npm run build
 ```
 
-#3 Project transpilation Typescript to Javascript
+<b>#3 Project transpilation Typescript to Javascript</b>
 ```
 npx tsc
 ```
 
-#4 Run project
+<b>#4 Run project</b>
 ```
 npm run server
 ```
