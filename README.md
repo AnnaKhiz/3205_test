@@ -5,7 +5,7 @@
 npm install
 ```
 
-## Project transpile typescript to lavascript
+## Project transpilation Typescript to Javascript
 ```
 npx tsc
 ```
