@@ -1,2 +1,9 @@
 # 3205_test
-test task
+
+<b>Install project</b>
+
+npm install
+
+<b>Run project</b>
+
+npm run server
